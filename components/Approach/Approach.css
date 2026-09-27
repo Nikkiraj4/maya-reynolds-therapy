@@ -1,0 +1,140 @@
+.approach {
+  background: var(--forest);
+  color: var(--cream);
+}
+
+.approach-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.7fr);
+  gap: 80px;
+  align-items: end;
+  margin-bottom: 64px;
+}
+
+.approach .eyebrow {
+  color: var(--sage-light);
+}
+
+.approach-title {
+  max-width: 720px;
+  margin-top: 1.25rem;
+  color: var(--cream);
+  font-family: var(--font-heading), Georgia, "Times New Roman", serif;
+  font-size: clamp(2.8rem, 5vw, 5rem);
+  font-weight: 400;
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+}
+
+.approach-intro {
+  max-width: 440px;
+  margin-bottom: 0.35rem;
+  color: rgba(247, 243, 236, 0.65);
+  font-size: 0.96rem;
+  line-height: 1.85;
+}
+
+/* ------------------------------
+   Approach List
+------------------------------ */
+
+.approach-list {
+  border-top: 1px solid rgba(247, 243, 236, 0.18);
+}
+
+.approach-item {
+  display: grid;
+  grid-template-columns: 60px minmax(0, 1fr) 30px;
+  gap: 1.5rem;
+  align-items: start;
+  padding: 2rem 0;
+  border-bottom: 1px solid rgba(247, 243, 236, 0.18);
+  transition:
+    padding-left 180ms ease,
+    background-color 180ms ease;
+}
+
+.approach-item:hover {
+  padding-left: 0.5rem;
+}
+
+.approach-number {
+  padding-top: 0.35rem;
+  color: var(--sage-light);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+}
+
+.approach-item-content h3 {
+  margin: 0 0 0.6rem;
+  color: var(--cream);
+  font-family: var(--font-heading), Georgia, "Times New Roman", serif;
+  font-size: 1.85rem;
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+.approach-item-content p {
+  max-width: 650px;
+  margin: 0;
+  color: rgba(247, 243, 236, 0.62);
+  font-size: 0.9rem;
+  line-height: 1.8;
+}
+
+.approach-icon {
+  margin-top: 0.3rem;
+  color: var(--terracotta-light);
+  transition: transform 180ms ease;
+}
+
+.approach-item:hover .approach-icon {
+  transform: translate(3px, -3px);
+}
+
+/* ------------------------------
+   Responsive
+------------------------------ */
+
+@media (max-width: 900px) {
+  .approach-header {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-bottom: 48px;
+  }
+
+  .approach-intro {
+    max-width: 620px;
+  }
+}
+
+@media (max-width: 600px) {
+  .approach-title {
+    font-size: 2.75rem;
+  }
+
+  .approach-item {
+    grid-template-columns: 38px minmax(0, 1fr);
+    gap: 0.9rem;
+    padding: 1.5rem 0;
+  }
+
+  .approach-icon {
+    display: none;
+  }
+
+  .approach-item-content h3 {
+    font-size: 1.5rem;
+  }
+
+  .approach-item-content p {
+    font-size: 0.88rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .approach-item,
+  .approach-icon {
+    transition: none;
+  }
+}

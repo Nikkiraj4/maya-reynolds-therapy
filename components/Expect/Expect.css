@@ -1,0 +1,223 @@
+.expect {
+  background: var(--cream);
+}
+
+.expect-header {
+  max-width: 850px;
+}
+
+.expect-title {
+  max-width: 780px;
+  margin: 1.25rem 0 1.5rem;
+  color: var(--forest);
+  font-family: var(--font-heading), Georgia, "Times New Roman", serif;
+  font-size: clamp(2.8rem, 5vw, 5rem);
+  font-weight: 400;
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+}
+
+.expect-intro {
+  max-width: 650px;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+/* ------------------------------
+   EXPECTATION CARDS
+------------------------------ */
+
+.expect-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 4rem;
+}
+
+.expect-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 300px;
+  padding: 2rem;
+
+  border: 1px solid var(--line);
+  background: var(--cream-light);
+
+  cursor: default;
+
+  transition:
+    transform 220ms ease,
+    border-color 220ms ease,
+    background-color 220ms ease,
+    box-shadow 220ms ease;
+}
+
+.expect-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(38, 51, 45, 0.22);
+  background: var(--white);
+  box-shadow: 0 16px 35px rgba(38, 51, 45, 0.06);
+}
+
+.expect-number {
+  color: var(--terracotta);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+
+  transition:
+    color 220ms ease,
+    transform 220ms ease;
+}
+
+.expect-card:hover .expect-number {
+  color: var(--forest);
+  transform: translateX(3px);
+}
+
+.expect-card-content {
+  margin-top: auto;
+  padding-top: 3rem;
+}
+
+.expect-card h3 {
+  margin-bottom: 0.7rem;
+  color: var(--forest);
+  font-family: var(--font-heading), Georgia, "Times New Roman", serif;
+  font-size: 1.7rem;
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+.expect-card p {
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.75;
+}
+
+.expect-arrow {
+  position: absolute;
+  right: 2rem;
+  top: 2rem;
+
+  color: var(--terracotta);
+
+  transition:
+    transform 220ms ease,
+    color 220ms ease;
+}
+
+.expect-card:hover .expect-arrow {
+  transform: translate(4px, -4px);
+  color: var(--forest);
+}
+
+/* ------------------------------
+   BOTTOM NOTE
+------------------------------ */
+
+.expect-note {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-top: 1rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.expect-note > span {
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
+.expect-note a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  color: var(--forest);
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+
+  transition:
+    gap 180ms ease,
+    color 180ms ease;
+}
+
+.expect-note a:hover {
+  gap: 0.75rem;
+  color: var(--terracotta);
+}
+
+/* ------------------------------
+   TABLET
+------------------------------ */
+
+@media (max-width: 900px) {
+  .expect-grid {
+    grid-template-columns: 1fr;
+    max-width: 650px;
+  }
+
+  .expect-card {
+    min-height: 240px;
+  }
+}
+
+/* ------------------------------
+   MOBILE
+------------------------------ */
+
+@media (max-width: 600px) {
+  .expect-title {
+    font-size: 2.75rem;
+  }
+
+  .expect-grid {
+    margin-top: 2.75rem;
+  }
+
+  .expect-card {
+    min-height: 220px;
+    padding: 1.5rem;
+  }
+
+  .expect-card-content {
+    padding-top: 2.5rem;
+  }
+
+  .expect-card h3 {
+    font-size: 1.5rem;
+  }
+
+  .expect-arrow {
+    right: 1.5rem;
+    top: 1.5rem;
+  }
+
+  .expect-note {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+}
+
+/* ------------------------------
+   REDUCED MOTION
+------------------------------ */
+
+@media (prefers-reduced-motion: reduce) {
+  .expect-card,
+  .expect-number,
+  .expect-arrow,
+  .expect-note a {
+    transition: none;
+  }
+
+  .expect-card:hover {
+    transform: none;
+  }
+}

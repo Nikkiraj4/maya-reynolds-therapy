@@ -1,0 +1,453 @@
+.office {
+  background: var(--cream);
+}
+
+/* ------------------------------
+   HEADER
+------------------------------ */
+
+.office-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.75fr);
+  gap: 7rem;
+  align-items: end;
+  margin-bottom: 4rem;
+}
+
+.office-title {
+  max-width: 720px;
+  margin-top: 1.25rem;
+  color: var(--forest);
+  font-family: var(--font-heading), Georgia, "Times New Roman", serif;
+  font-size: clamp(2.8rem, 5vw, 5rem);
+  font-weight: 400;
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+}
+
+.office-intro {
+  max-width: 440px;
+  margin-bottom: 0.35rem;
+  color: var(--muted);
+  font-size: 0.96rem;
+  line-height: 1.85;
+}
+
+/* ------------------------------
+   GALLERY
+------------------------------ */
+
+.office-gallery {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(260px, 0.75fr);
+  gap: 1rem;
+}
+
+.office-gallery-main {
+  min-width: 0;
+}
+
+.office-gallery-side {
+  display: grid;
+  grid-template-rows: minmax(260px, 1fr) auto;
+  gap: 1rem;
+}
+
+/* ------------------------------
+   IMAGE PLACEHOLDERS
+------------------------------ */
+
+.office-image-placeholder {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  padding: 2rem;
+  isolation: isolate;
+  transition: transform 300ms ease;
+}
+
+.office-image-placeholder::before {
+  content: "";
+  position: absolute;
+  z-index: -2;
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at 72% 24%,
+      rgba(207, 185, 158, 0.72),
+      transparent 34%
+    ),
+    linear-gradient(
+      145deg,
+      var(--sage-light),
+      var(--cream-light)
+    );
+
+  transition: transform 500ms ease;
+}
+
+.office-image-placeholder::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 45%;
+  height: 45%;
+  right: -8%;
+  bottom: -12%;
+  border-radius: 50%;
+  background: rgba(174, 126, 99, 0.26);
+  transition:
+    transform 500ms ease,
+    opacity 300ms ease;
+}
+
+.office-image-placeholder:hover {
+  transform: translateY(-3px);
+}
+
+.office-image-placeholder:hover::before {
+  transform: scale(1.04);
+}
+
+.office-image-placeholder:hover::after {
+  transform: translate(-8px, -8px);
+}
+
+.office-image-placeholder span {
+  position: relative;
+  z-index: 2;
+  font-family: var(--font-heading), Georgia, "Times New Roman", serif;
+  font-size: 1.45rem;
+  color: var(--forest);
+}
+
+/* ------------------------------
+   MAIN IMAGE
+------------------------------ */
+
+.office-image-large {
+  min-height: 560px;
+}
+
+/* ------------------------------
+   SMALL IMAGE
+------------------------------ */
+
+.office-image-small {
+  min-height: 330px;
+}
+
+.office-image-small::before {
+  background:
+    radial-gradient(
+      circle at 30% 28%,
+      rgba(247, 243, 236, 0.85),
+      transparent 35%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(174, 126, 99, 0.55),
+      var(--sage-light)
+    );
+}
+
+/* ------------------------------
+   LOCATION CARD
+------------------------------ */
+
+.office-location-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  min-height: 150px;
+  padding: 1.75rem;
+  background: var(--forest);
+  color: var(--cream);
+  transition:
+    transform 220ms ease,
+    background-color 220ms ease;
+}
+
+.office-location-card:hover {
+  transform: translateY(-3px);
+  background: var(--forest-soft);
+}
+
+.office-location-card > svg {
+  flex-shrink: 0;
+  color: var(--terracotta-light);
+}
+
+.office-location-card div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.office-location-card span {
+  color: rgba(247, 243, 236, 0.55);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.office-location-card strong {
+  color: var(--cream);
+  font-family: var(--font-heading), Georgia, "Times New Roman", serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+
+/* ------------------------------
+   DETAILS
+------------------------------ */
+
+.office-details {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 1rem;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.office-detail {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr);
+  gap: 1rem;
+  padding: 2rem 1.5rem 2rem 0;
+}
+
+.office-detail + .office-detail {
+  padding-left: 1.5rem;
+  border-left: 1px solid var(--line);
+}
+
+.office-detail-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  color: var(--terracotta);
+  transition:
+    transform 220ms ease,
+    background-color 220ms ease,
+    color 220ms ease;
+}
+
+.office-detail:hover .office-detail-icon {
+  transform: translateY(-3px);
+  background: var(--forest);
+  color: var(--cream);
+}
+
+.office-detail h3 {
+  margin-bottom: 0.45rem;
+  color: var(--forest);
+  font-family: var(--font-heading), Georgia, "Times New Roman", serif;
+  font-size: 1.35rem;
+  font-weight: 400;
+}
+
+.office-detail p {
+  color: var(--muted);
+  font-size: 0.86rem;
+  line-height: 1.7;
+}
+
+/* ------------------------------
+   FOOTER NOTE
+------------------------------ */
+
+.office-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding-top: 1.75rem;
+}
+
+.office-footer p {
+  max-width: 580px;
+  color: var(--muted);
+  font-size: 0.84rem;
+  line-height: 1.7;
+}
+
+.office-footer a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+  color: var(--forest);
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    gap 180ms ease,
+    color 180ms ease;
+}
+
+.office-footer a:hover {
+  gap: 0.75rem;
+  color: var(--terracotta);
+}
+
+.office-footer a:focus-visible {
+  outline: 2px solid var(--terracotta);
+  outline-offset: 5px;
+}
+
+/* ------------------------------
+   TABLET
+------------------------------ */
+
+@media (max-width: 900px) {
+  .office-header {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .office-intro {
+    max-width: 620px;
+  }
+
+  .office-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .office-gallery-side {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+  }
+
+  .office-image-large {
+    min-height: 500px;
+  }
+
+  .office-image-small {
+    min-height: 300px;
+  }
+
+  .office-location-card {
+    min-height: 300px;
+  }
+
+  .office-details {
+    grid-template-columns: 1fr;
+  }
+
+  .office-detail {
+    padding: 1.5rem 0;
+  }
+
+  .office-detail + .office-detail {
+    padding-left: 0;
+    border-left: none;
+    border-top: 1px solid var(--line);
+  }
+}
+
+/* ------------------------------
+   MOBILE
+------------------------------ */
+
+@media (max-width: 600px) {
+  .office-header {
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .office-title {
+    font-size: 2.75rem;
+  }
+
+  .office-gallery {
+    gap: 0.75rem;
+  }
+
+  .office-gallery-side {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .office-image-large {
+    min-height: 430px;
+  }
+
+  .office-image-small {
+    min-height: 260px;
+  }
+
+  .office-location-card {
+    min-height: 150px;
+    padding: 1.5rem;
+  }
+
+  .office-details {
+    margin-top: 0.75rem;
+  }
+
+  .office-detail {
+    grid-template-columns: 38px minmax(0, 1fr);
+    gap: 0.85rem;
+    padding: 1.35rem 0;
+  }
+
+  .office-detail-icon {
+    width: 34px;
+    height: 34px;
+  }
+
+  .office-detail h3 {
+    font-size: 1.2rem;
+  }
+
+  .office-detail p {
+    font-size: 0.84rem;
+  }
+
+  .office-footer {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+/* ------------------------------
+   REDUCED MOTION
+------------------------------ */
+
+@media (prefers-reduced-motion: reduce) {
+  .office-image-placeholder,
+  .office-image-placeholder::before,
+  .office-image-placeholder::after,
+  .office-location-card,
+  .office-detail-icon,
+  .office-footer a {
+    transition: none;
+  }
+}
+.office-image {
+  object-fit: cover;
+  transition: transform 500ms ease;
+}
+
+.office-image-placeholder:hover .office-image {
+  transform: scale(1.025);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .office-image {
+    transition: none;
+  }
+
+  .office-image-placeholder:hover .office-image {
+    transform: none;
+  }
+}
