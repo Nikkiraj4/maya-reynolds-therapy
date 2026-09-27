@@ -1,36 +1,106 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Dr. Maya Reynolds, PsyD — Therapy Website
 
-## Getting Started
+A responsive, modern therapist website designed for Dr. Maya Reynolds, PsyD, a Licensed Clinical Psychologist based in Santa Monica, California.
 
-First, run the development server:
+The website provides a calm, welcoming digital experience for adults seeking support with anxiety, panic, trauma, burnout, perfectionism, and prolonged stress.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Live Website
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+https://maya-reynolds-therapy-mauve.vercel.app/
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## GitHub Repository
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+https://github.com/Nikkiraj4/maya-reynolds-therapy
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Project Overview
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+This project was created as a therapist website redesign based on the provided reference website structure and Dr. Maya Reynolds' professional profile.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The design focuses on creating a warm, grounded, and trustworthy atmosphere while maintaining a clean editorial visual style and responsive experience across desktop and mobile devices.
 
-## Deploy on Vercel
+The website includes:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Hero section with location-focused messaging
+- About Dr. Maya Reynolds section
+- Areas of support
+- Therapeutic approach
+- What to expect from therapy
+- Frequently asked questions
+- Custom "Our Office" section
+- Contact / consultation section
+- Responsive navigation and footer
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Services Highlighted
+
+The website focuses on three primary areas of support:
+
+### Anxiety & Panic Therapy
+Support for persistent worry, overthinking, panic, bodily tension, and feeling constantly on edge.
+
+### Trauma Therapy
+Carefully paced trauma-focused work addressing both single-incident trauma and longer-standing patterns related to childhood, relationships, and chronic stress.
+
+### Burnout & Perfectionism
+Support for professionals, entrepreneurs, and creatives experiencing exhaustion, perfectionism, high internal pressure, and difficulty slowing down.
+
+## Design Direction
+
+The visual identity was designed around a calm and grounded therapy environment.
+
+### Design characteristics
+
+- Warm neutral backgrounds
+- Deep forest green accents
+- Muted sage and terracotta tones
+- Editorial serif typography
+- Clean sans-serif body typography
+- Generous whitespace
+- Minimal and understated interactions
+- Responsive layouts
+- Accessible focus states
+- Reduced-motion support
+
+The design intentionally avoids an overly clinical appearance and instead aims to communicate warmth, privacy, trust, and calm.
+
+## Technology Stack
+
+- Next.js
+- React
+- TypeScript
+- CSS
+- Lucide React
+- Vercel
+
+## Project Structure
+
+```text
+maya-reynolds-therapy/
+├── app/
+│   ├── globals.css
+│   ├── icon.svg
+│   ├── layout.tsx
+│   └── page.tsx
+│
+├── components/
+│   ├── About/
+│   ├── Approach/
+│   ├── Contact/
+│   ├── Expect/
+│   ├── FAQ/
+│   ├── Footer/
+│   ├── Hero/
+│   ├── Navbar/
+│   ├── OurOffice/
+│   └── Support/
+│
+├── public/
+│   └── images/
+│       ├── maya-reynolds.png
+│       ├── office-detail.png
+│       └── office-main.png
+│
+├── package.json
+├── package-lock.json
+└── README.md
